@@ -1,0 +1,52 @@
+
+/* Center "h1" element */
+h1 
+{
+    text-align: center;
+}
+/* This container includes my "container" as well as my "canvas" */
+.center-container 
+{
+    /* Sets the width of my container */
+    width: 608px;
+    /* This margin keeps my container "centered" */
+    margin: 0 auto;
+    /* Margin-top: Is set to 50px down from the top */
+    margin-top: 50px;
+}
+
+
+table 
+{
+    /* This property collapses the table border into 1 border */
+    border-collapse: collapse;
+    /* This property will hide the outer borders on the table */
+    border-style: hidden;
+}
+
+
+td 
+{
+    /* This property changes the cursor to the index finger hand 
+    upon hover over "Table Cell (td)" elements */
+    cursor: pointer;
+    /* This property sets my table border style 
+    Eruption Green Hex: #006a3a rgb(model displayed below)*/
+    border: 4px solid rgb( 0.0, 41.57, 22.75 );
+    /* This property removes default padding */
+    padding: 0px;
+    width: 300px;
+    height: 300px;
+    filter: contrast( 3 );
+}
+
+canvas
+{
+    /* This property sets the position of the canvas on the 
+    top left corner of my container */
+    position: absolute;
+    /* This property places the canvas over the top of my table */
+    z-index: 10;
+    /* This propety makes my canvas invisible */
+    pointer-events: none;
+}

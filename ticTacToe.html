@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Online Game</title>
+    <link rel="stylesheet" type="text/css" href="/css/game.css">
+</head>
+
+<H1>Tic_Tac_Toe Game</H1>
+
+<body id="body">
+
+    <!-- DIV_CENTER-CONTAINER: This container is needed to
+    overlay my canvas over my table -->
+    <div class="center-container">
+
+        <!-- NOTE: Canvas width and height must be within the element -->
+        <canvas id="win-lines" width="608" height="608"></canvas>
+
+        <!-- TABLE -->
+        <table>
+            <!-- TABLE_ROW-1 -->
+            <tr>
+                <!-- TABLE_CELL-1 -->
+                <td id="0" onclick='palceXorO( "0" )'></td>
+                <td id="1" onclick='palceXorO( "1" )'></td>
+                <td id="2" onclick='palceXorO( "2" )'></td>
+            <!-- END_TABLE_ROW-1 -->
+            </tr>
+
+            <!-- TABLE_ROW-2 -->
+            <tr>
+                <!-- TABLE_CELL-2 -->
+                <td id="3" onclick='palceXorO( "3" )'></td>
+                <td id="4" onclick='palceXorO( "4" )'></td>
+                <td id="5" onclick='palceXorO( "5" )'></td>
+            <!-- END_TABLE_ROW-2 --> 
+            </tr>
+            
+            <!-- TABLE_ROW-3 -->
+            <tr>
+                <!-- TABLE_CELL-3 -->
+                <td id="6" onclick='palceXorO( "6" )'></td>
+                <td id="7" onclick='palceXorO( "7" )'></td>
+                <td id="8" onclick='palceXorO( "8" )'></td>
+            <!-- END_TABLE_ROW-3 -->
+            </tr>
+        <!-- END_TABLE -->
+        </table>
+        <!-- END_DIV_CENTER-CONTAINER -->
+    </div>
+
+    
+    <!--                ---- ASSIGNING_CALLING_JAVASCRIPT ---- -->
+    <script src="/js/tictactoe.js"></script>
+</body>
+</html>
