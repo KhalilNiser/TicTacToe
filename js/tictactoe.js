@@ -69,7 +69,7 @@ function placeXorO( squareNumber )
             activePlayer = 'X';
         }
 
-        
+
 
         // This function plays placement sound
         audio( "./media/place.mp3" );
@@ -171,82 +171,82 @@ function checkWinConditions()
     // X 0, 1, 2 condition
     if ( arrayIncludes( '0X', '1X', '2X' ) )
     {
-        drawWinLine( 50, 100, 558, 100 );
+        drawWinLine( 50, 100, 558, 100 )
     }
     // X 3, 4, 5 condition
     else if ( arrayIncludes( '3X', '4X', '5X' ) )
     {
-        drawWinLine( 50, 304, 558, 304 );
+        drawWinLine( 50, 304, 558, 304 )
     }
     // X 6, 7, 8 condition
     else if ( arrayIncludes( '6X', '7X', '8X' ) )
     {
-        drawWinLine( 50, 508, 558, 508 );
+        drawWinLine( 50, 508, 558, 508 )
     }
     // X 0, 3, 6 condition
     else if ( arrayIncludes( '0X', '3X', '6X' ) )
     {
-        drawWinLine( 100, 50, 100, 558 );
+        drawWinLine( 100, 50, 100, 558 )
     }
     // X 1, 4, 7 condition
     else if ( arrayIncludes( '1X', '4X', '7X' ) )
     {
-        drawWinLine( 304, 50, 304, 558 );
+        drawWinLine( 304, 50, 304, 558 )
     }
     // X 2, 5, 8 condition
     else if ( arrayIncludes( '2X', '5X', '8X' ) )
     {
-        drawWinLine( 508, 50, 508, 558 );
+        drawWinLine( 508, 50, 508, 558 )
     }
     // X 6, 4, 2 condition
     else if ( arrayIncludes( '6X', '4X', '2X' ) )
     {
-        drawWinLine( 100, 508, 510, 90 );
+        drawWinLine( 100, 508, 510, 90 )
     }
     // X 0, 4, 8 condition
     else if ( arrayIncludes( '0X', '4X', '8X' ) )
     {
-        drawWinLine( 100, 100, 520, 520 );
+        drawWinLine( 100, 100, 520, 520 )
     }
     // O 0, 1, 2 condition
     else if ( arrayIncludes( '0O', '1O', '2O' ) )
     {
-        drawWinLine( 50, 100, 558, 100 );
+        drawWinLine( 50, 100, 558, 100 )
     }
     // O 3, 4, 5 condition
     else if ( arrayIncludes( '3O', '4O', '5O' ) )
     {
-        drawWinLine( 50, 304, 558, 304 );
+        drawWinLine( 50, 304, 558, 304 )
     }
     // O 6, 7, 8 condition
     else if ( arrayIncludes( '6O', '7O', '8O' ) )
     {
-        drawWinLine( 50, 508, 558, 508 );
+        drawWinLine( 50, 508, 558, 508 )
     }
     // O 0, 3, 6 condition
     else if ( arrayIncludes( '0O', '3O', '6O' ) )
     {
-        drawWinLine( 100, 50, 100, 558 );
+        drawWinLine( 100, 50, 100, 558 )
     }
     // O 1, 4, 7 condition
     else if ( arrayIncludes( '1O', '4O', '7O' ) )
     {
-        drawWinLine( 304, 50, 304, 558 );
+        drawWinLine( 304, 50, 304, 558 )
     }
     // O 2, 5, 8 condition
     else if ( arrayIncludes( '2O', '5O', '8O' ) )
     {
-        drawWinLine( 508, 50, 508, 558 );
+        drawWinLine( 508, 50, 508, 558 )
     }
     // O 6, 4, 2 condition
     else if ( arrayIncludes( '6O', '4O', '2O' ) )
     {
-        drawWinLine( 100, 508, 510, 90 );
+        drawWinLine( 100, 508, 510, 90 )
     }
     // X 0, 4, 8 condition
     else if ( arrayIncludes( '0O', '4O', '8O' ) )
     {
-        drawWinLine( 100, 100, 520, 520 );
+        drawWinLine( 100, 100, 520, 520 )
     }
     /**
      * This condition checks for a tie. If none of the above conditions 
@@ -281,32 +281,37 @@ function checkWinConditions()
           * If the 3 variables I pass are all included in my array 
           * then, true is returned and my "else if" condition is 
           * satisfied and executes the "drawLine()" function.
-          * 
-          * https://www.learncodinganywhere.com/Student/PageView/ViewPage?courseId=486&pageNumber=281
           */
          if ( squA === true && squB === true && squC === true )
          {
              return true;
          }
      }
+}
 
 
+/**                 ---- RESET_GAME()_FUNCTION ----
+     * This function resets the game after every win or tie
+     * condition 
+     */
+function resetGame()
+{
+    /**
+     * This for-loop iterates through each HTML square
+     * element
+     */
+    for ( let i = 0; i < 9; i++ )
+    {
+        // THis variable gets the HTML element i
+        let square = document.getElementById(String( i ));
 
-     /**                 ---- DISABLE_CLICK()_FUNCTION ---- 
-    * In the next steps I will define the audio() function. Which will
-    * allow for the playing of audio clips on click. The disableClick() 
-    * function, which will give the computer needed time to take its turn.
-    * 
-    * NOTE: The function below makes my body element temporarily unclickable
-    */
-   function disableClick()
-   {
-    // This event makes my body unclickable
-    body.style.pointerEvents = "none";
-
-    // This makes my body again clickable, after 1 second
-    setTimeout( function () { body.style.pointerEvents = "auto"; }, 1000 );
+        // This line removes my element's backgroundImage
+        square.style.backgroundImage = '';
     }
+
+    // THis resets my array so it is empty and I can start over
+    selectedSquares = [];
+}
 
 
 
@@ -382,27 +387,27 @@ function checkWinConditions()
          * NOTE: 'squA' variable in this function belongs to 'c' variable
          * inside "arrayIncludes" function
          */
-        squC.clearRect( 0, 0, 608, 608 );
+        myAccCanvas.clearRect( 0, 0, 608, 608 );
 
         // This method starts a new path
-        squC.beginPath();
+        myAccCanvas.beginPath();
 
         /**
          * This method moves me to a new starting point of the line
          */
-        squC.moveTo( x1, y1 );
+        myAccCanvas.moveTo( x1, y1 );
 
         // This method indicates the end point of the line
-        squC.lineTo( x, y );
+        myAccCanvas.lineTo( x, y );
 
         // This method sets the width of my line
-        squC.lineWidth = 10;
+        myAccCanvas.lineWidth = 10;
 
         // This method sets the color of my line
-        squC.strokeStyle = 'rgba( 70, 225, 33, 0.8 )';
+        myAccCanvas.strokeStyle = 'rgba( 70, 225, 33, 0.8 )';
 
         // This method draws everything I laid out above
-        squC.stroke();
+        myAccCanvas.stroke();
 
         // This "if-statement" checks if I've reached the endpoints
         if ( x1 <= x2 && y1 <= y2 )
@@ -447,68 +452,57 @@ function checkWinConditions()
             }
        }
     }
-    
-    
-    
-    
-    /**                 ---- CLEAR()_FUNCTION ----
+
+     /**                 ---- CLEAR()_FUNCTION ----
      * This function clears my canvas after the win line
      * is drawn
      */
-    function clear()
-    {
-        // This line starts my animation loop
-        const animationLoop = requestAnimationFrame( clear );
-
-        // This line clears my canvas
-        squC.clearRect( 0, 0, 608, 608 );
-
-        // This line stops my animation loop
-        cancelAnimationFrame( animationLoop );
-    }
-
-    // This line disables clicking while win sound is playing
-    disableClick();
-
-    // This line plays the win sound
-    audio( "./media/winGame.mp3" );
-
-    // This line calls the main "animationLoop"
-    animatedLineDrawing();
-
-    /**
-     * This line waits 1 second. Then, clears canvas, resets game,
-     * and allows clicking again
-     */
-    setTimeout( function () { clear(); resetGame(); }, 1000 );
-
-
-
-    /**                 ---- RESET_GAME()_FUNCTION ----
-     * This function resets the game after every win or tie
-     * condition 
-     */
-    function resetGame()
-    {
-        /**
-         * This for-loop iterates through each HTML square
-         * element
-         */
-        for ( let i = 0; i < 9; i++ )
-        {
-            // THis variable gets the HTML element i
-            let square =    document.getElementById( String( i ) );
-
-            // This line removes my element's backgroundImage
-            square.style.backgroundImage = "";
-        }
-
-        // THis resets my array so it is empty and I can start over
-        selectedSquares = [];
-    }
+     function clear()
+     {
+         // This line starts my animation loop
+         const animationLoop = requestAnimationFrame( clear );
+ 
+         // This line clears my canvas
+         myAccCanvas.clearRect( 0, 0, 608, 608 );
+ 
+         // This line stops my animation loop
+         cancelAnimationFrame( animationLoop );
+     }
+ 
+     // This line disables clicking while win sound is playing
+     disableClick();
+ 
+     // This line plays the win sound
+     audio( "./media/winGame2.mp3" );
+ 
+     // This line calls the main "animationLoop"
+     animatedLineDrawing();
+ 
+     /**
+      * This line waits 1 second. Then, clears canvas, resets game,
+      * and allows clicking again
+      */
+     setTimeout( function () { clear(); resetGame(); }, 1000 );
 
     }
-}
+
+
+      /**                 ---- DISABLE_CLICK()_FUNCTION ---- 
+    * In the next steps I will define the audio() function. Which will
+    * allow for the playing of audio clips on click. The disableClick() 
+    * function, which will give the computer needed time to take its turn.
+    * 
+    * NOTE: The function below makes my body element temporarily unclickable
+    */
+   function disableClick()
+   {
+    // This event makes my body unclickable
+    body.style.pointerEvents = "none";
+
+    // This makes my body again clickable, after 1 second
+    setTimeout( function () { body.style.pointerEvents = "auto"; }, 1000 );
+    }
+    
     
     
     
